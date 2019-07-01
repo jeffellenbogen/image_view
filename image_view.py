@@ -41,7 +41,7 @@ def background():
 ###################################
 # Main loop 
 ###################################
-image = Image.open("phishbow.jpg").convert('RGB')
+image = Image.open("unicorn.jpg").convert('RGB')
 #image = image.rotate(180)
 image = image.resize((40,40))
 imageX = random.randint(0,24)
