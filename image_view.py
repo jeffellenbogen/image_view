@@ -41,7 +41,7 @@ def background():
 ###################################
 # Main loop 
 ###################################
-image = Image.open("mustanglogo2.jpg").convert('RGB')
+image = Image.open("unicorn2.jpg").convert('RGB')
 #image = image.rotate(180)
 image = image.resize((40,40))
 imageX = random.randint(0,24)
