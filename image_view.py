@@ -41,7 +41,7 @@ def background():
 ###################################
 # Main loop 
 ###################################
-image = Image.open("elephant.jpg").convert('RGB')
+image = Image.open("flyingpig.jpg").convert('RGB')
 #image = image.rotate(180)
 image = image.resize((40,40))
 imageX = random.randint(0,24)
