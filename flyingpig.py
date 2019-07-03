@@ -42,8 +42,6 @@ def background():
   matrix.SetImage(temp_image,0,0)
 
 
-
-
 ###################################
 # Main loop 
 ###################################
@@ -72,7 +70,7 @@ while True:
       image = Image.open("/pigs/flying-pig-19.jpg").convert('RGB')
     elif x == 10:
       image = Image.open("/pigs/flying-pig-21.jpg").convert('RGB')
-   else:
+    else:
       image = Image.open("/pigs/flying-pig-23.jpg").convert('RGB')
     matrix.SetImage(image,0,0)
     sleep(.1)
