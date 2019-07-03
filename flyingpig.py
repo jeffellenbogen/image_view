@@ -41,20 +41,7 @@ def background():
   temp_draw.rectangle((0,0,64,64), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
 
-###################################
-# Image Setup
-###################################
-def newImage():
-  # used global keyword here to access the object image in the main loop
-  global image
-  pickImage = random.randint(1,3)
-  if pickImage == 1:
-    image = Image.open("/avengers/ironman.jpg").convert('RGB')
-  elif pickImage == 2:
-    image = Image.open("/avengers/hulk.jpg").convert('RGB')
-  else:
-    image = Image.open("/avengers/kong.jpg").convert('RGB')
-  
+
 
 
 ###################################
@@ -62,10 +49,34 @@ def newImage():
 ###################################
 background()
 while True:
-  matrix.SetImage(image,0,0)
-  sleep(3)
-  newImage()
-
+  for x in range(11):
+    if x == 0:
+      image = Image.open("/pigs/flying-pig-01.jpg").convert('RGB')
+    elif x == 1:
+      image = Image.open("/pigs/flying-pig-03.jpg").convert('RGB')
+    elif x == 2:
+      image = Image.open("/pigs/flying-pig-05.jpg").convert('RGB')
+    elif x == 3:
+      image = Image.open("/pigs/flying-pig-07.jpg").convert('RGB')
+    elif x == 4:
+      image = Image.open("/pigs/flying-pig-09.jpg").convert('RGB')
+    elif x == 5:
+      image = Image.open("/pigs/flying-pig-11.jpg").convert('RGB')
+    elif x == 6:
+      image = Image.open("/pigs/flying-pig-13.jpg").convert('RGB')
+    elif x == 7:
+      image = Image.open("/pigs/flying-pig-15.jpg").convert('RGB')
+    elif x == 8:
+      image = Image.open("/pigs/flying-pig-17.jpg").convert('RGB')
+    elif x == 9:
+      image = Image.open("/pigs/flying-pig-19.jpg").convert('RGB')
+    elif x == 10:
+      image = Image.open("/pigs/flying-pig-21.jpg").convert('RGB')
+   else:
+      image = Image.open("/pigs/flying-pig-23.jpg").convert('RGB')
+    matrix.SetImage(image,0,0)
+    sleep(.1)
+  
 try:
   print("Press CTRL-C to stop")
   while True:
