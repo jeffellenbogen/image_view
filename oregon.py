@@ -31,7 +31,10 @@ options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'a
 matrix = RGBMatrix(options = options)
 
 image = Image.open("./oregon/OregonO_green.jpg").convert('RGB')
-
+imageX = 0
+imagey = 0
+dirX = 0
+dirY = 0
 
 
 ###################################
@@ -47,7 +50,7 @@ def background():
 # newImage
 ###################################
 def newImage():
-  global image
+  global image, imageX, imageY, dirX, dirY
   pickImage = random.randint(1,5)
   if pickImage == 1:
     image = Image.open("./oregon/Oregon.jpg").convert('RGB')
