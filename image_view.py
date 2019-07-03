@@ -47,7 +47,7 @@ if pickImage == 1:
 elif pickImage == 2:
   image = Image.open("/logos/elephant.jpg").convert('RGB')
 elif pickImage == 3:
-  image = Image.open("/logos/phishbow.jpg").convert('RGB')
+  image = Image.open("/logos/phish.jpg").convert('RGB')
 elif pickImage == 4:
   image = Image.open("/logos/unicorn2.jpg").convert('RGB')
 elif pickImage == 5:
