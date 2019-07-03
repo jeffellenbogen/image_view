@@ -47,13 +47,15 @@ def background():
 def newImage():
   # used global keyword here to access the object image in the main loop
   global image
-  pickImage = random.randint(1,3)
+  pickImage = random.randint(1,4)
   if pickImage == 1:
     image = Image.open("/avengers/ironman.jpg").convert('RGB')
   elif pickImage == 2:
     image = Image.open("/avengers/hulk.jpg").convert('RGB')
+  elif pickImage == 3:
+    image = Image.open("/avengers/spiderman.jpg").convert('RGB')  
   else:
-    image = Image.open("/avengers/kong.jpg").convert('RGB')
+    image = Image.open("/avengers/captain.jpg").convert('RGB')
   
 
 
