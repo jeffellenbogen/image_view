@@ -50,7 +50,11 @@ def background():
 # newImage
 ###################################
 def newImage():
-  global image, imageX, imageY, dirX, dirY
+  global image
+  global imageX
+  global imageY
+  global dirX
+  global dirY
   pickImage = random.randint(1,5)
   if pickImage == 1:
     image = Image.open("./oregon/Oregon.jpg").convert('RGB')
