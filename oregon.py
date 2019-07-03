@@ -79,9 +79,9 @@ def newImage():
 ###################################
 background()
 while True:
-  timer = threading.Timer(5.0,newImage)
-  timer.start()
-  matrix.SetImage(image,imageX+dirX,imageY+dirY)
+  #timer = threading.Timer(5.0,newImage)
+  #timer.start()
+  matrix.SetImage(image, imageX + dirX, imageY + dirY)
   sleep(.25)
   if ((imageX > 24) or (imageX < 0)):
     dirX = -dirX
