@@ -43,17 +43,17 @@ def background():
 ###################################
 pickImage = random.randint(1,6)
 if pickImage == 1:
-  image = Image.open("/logos/flyingpig.jpg").convert('RGB')
+  image = Image.open("./logos/flyingpig.jpg").convert('RGB')
 elif pickImage == 2:
-  image = Image.open("/logos/elephant.jpg").convert('RGB')
+  image = Image.open("./logos/elephant.jpg").convert('RGB')
 elif pickImage == 3:
-  image = Image.open("/logos/phish.jpg").convert('RGB')
+  image = Image.open("./logos/phish.jpg").convert('RGB')
 elif pickImage == 4:
-  image = Image.open("/logos/unicorn2.jpg").convert('RGB')
+  image = Image.open("./logos/unicorn2.jpg").convert('RGB')
 elif pickImage == 5:
-  image = Image.open("/logos/kong.jpg").convert('RGB')  
+  image = Image.open("./logos/kong.jpg").convert('RGB')  
 else:
-  image = Image.open("/logos/mustanglogo2.jpg").convert('RGB')
+  image = Image.open("./logos/mustanglogo2.jpg").convert('RGB')
   
 #image = image.rotate(180)
 image = image.resize((40,40))
