@@ -42,13 +42,19 @@ def background():
 # Image Setup
 ###################################
 def newImage():
-  pickImage = random.randint(1,3)
+  pickImage = random.randint(1,6)
   if pickImage == 1:
     image = Image.open("ironman.jpg").convert('RGB')
   elif pickImage == 2:
     image = Image.open("hulk.jpg").convert('RGB')
-  else:
+  elif pickImage == 3:
     image = Image.open("captain.jpg").convert('RGB')
+  elif pickImage == 4:
+    image = Image.open("OregonDuck.jpg").convert('RGB')
+   elif pickImage == 5:
+    image = Image.open("OregonDuck2.jpg").convert('RGB')   
+  else:
+    image = Image.open("kong.jpg").convert('RGB')
   
 
 
