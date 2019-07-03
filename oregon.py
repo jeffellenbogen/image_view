@@ -1,7 +1,7 @@
 # Used in main loop
 from time import sleep
 import random
-import threading
+import time
 
 ###################################
 # Graphics imports, constants and structures
@@ -31,12 +31,16 @@ options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'a
 matrix = RGBMatrix(options = options)
 
 image = Image.open("./oregon/OregonO_green.jpg").convert('RGB')
-imageX = 0
-imagey = 0
-dirX = 0
-dirY = 0
+#image = image.rotate(180)
+image = image.resize((40,40))
+imageX= random.randint(0,24)
+imageY= random.randint(0,24)
+dirX = random.randint(1,3)
+dirY = random.randint(1,3)
 
-
+start = time.time()
+elapsed_time = 0
+last_reset = 0
 ###################################
 # Background
 ###################################
@@ -51,10 +55,7 @@ def background():
 ###################################
 def newImage():
   global image
-  global imageX
-  global imageY
-  global dirX
-  global dirY
+
   pickImage = random.randint(1,5)
   if pickImage == 1:
     image = Image.open("./oregon/Oregon.jpg").convert('RGB')
@@ -66,22 +67,22 @@ def newImage():
     image = Image.open("./oregon/OregonO_green.jpg").convert('RGB')
   else:
     image = Image.open("./oregon/OregonO_yellow.jpg").convert('RGB')    
-  
-  #image = image.rotate(180)
   image = image.resize((40,40))
-  imageX = random.randint(0,24)
-  imageY = random.randint(0,24)
-  dirX = random.randint(1,3)
-  dirY = random.randint(1,3)
+
 
 ###################################
 # Main loop 
 ###################################
 background()
+#newImage()
 while True:
-  #timer = threading.Timer(5.0,newImage)
-  #timer.start()
-  matrix.SetImage(image, imageX + dirX, imageY + dirY)
+  if (elapsed_time > 5):
+    newImage()
+    elapsed_time=0
+    last_reset=time.time()
+    
+  elapsed_time = time.time()-last_reset    
+  matrix.SetImage(image, imageX+dirX, imageY+dirY)
   sleep(.25)
   if ((imageX > 24) or (imageX < 0)):
     dirX = -dirX
