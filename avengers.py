@@ -49,13 +49,13 @@ def newImage():
   global image
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("/avengers/ironman.jpg").convert('RGB')
+    image = Image.open("./avengers/ironman.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("/avengers/hulk.jpg").convert('RGB')
+    image = Image.open("./avengers/hulk.jpg").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("/avengers/spiderman.jpg").convert('RGB')  
+    image = Image.open("./avengers/spiderman.jpg").convert('RGB')  
   else:
-    image = Image.open("/avengers/captain.jpg").convert('RGB')
+    image = Image.open("./avengers/captain.jpg").convert('RGB')
   
 
 
