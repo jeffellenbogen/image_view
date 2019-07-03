@@ -41,7 +41,7 @@ def background():
 ###################################
 # Image Setup
 ###################################
-pickImage = random.randint(1,4)
+pickImage = random.randint(1,5)
 if pickImage == 1:
   image = Image.open("flyingpig.jpg").convert('RGB')
 elif pickImage == 2:

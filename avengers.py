@@ -29,6 +29,8 @@ options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'a
 
 matrix = RGBMatrix(options = options)
 
+image = Image.open("/avengers/ironman.jpg").convert('RGB')
+
 ###################################
 # Background
 ###################################
@@ -42,21 +44,15 @@ def background():
 # Image Setup
 ###################################
 def newImage():
-  pickImage = random.randint(1,6)
+  global image
+  pickImage = random.randint(1,3)
   if pickImage == 1:
-    image = Image.open("ironman.jpg").convert('RGB')
+    image = Image.open("/avengers/ironman.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("hulk.jpg").convert('RGB')
-  elif pickImage == 3:
-    image = Image.open("captain.jpg").convert('RGB')
-  elif pickImage == 4:
-    image = Image.open("OregonDuck.jpg").convert('RGB')
-   elif pickImage == 5:
-    image = Image.open("OregonDuck2.jpg").convert('RGB')   
+    image = Image.open("/avengers/hulk.jpg").convert('RGB')
   else:
-    image = Image.open("kong.jpg").convert('RGB')
+    image = Image.open("/avengers/kong.jpg").convert('RGB')
   
-
 
 
 ###################################
