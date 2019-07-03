@@ -41,40 +41,32 @@ def background():
 ###################################
 # Image Setup
 ###################################
-pickImage = random.randint(1,4)
-if pickImage == 1:
-  image = Image.open("flyingpig.jpg").convert('RGB')
-elif pickImage == 2:
-  image = Image.open("elephant2.jpg").convert('RGB')
-elif pickImage == 3:
-  image = Image.open("phishbow.jpg").convert('RGB')
-elif pickImage == 4:
-  image = Image.open("unicorn2.jpg").convert('RGB')
-else:
-  image = Image.open("mustanglogo2.jpg").convert('RGB')
+def newImage():
+  pickImage = random.randint(1,6)
+  if pickImage == 1:
+    image = Image.open("ironman.jpg").convert('RGB')
+  elif pickImage == 2:
+    image = Image.open("hulk.jpg").convert('RGB')
+  elif pickImage == 3:
+    image = Image.open("captain.jpg").convert('RGB')
+  elif pickImage == 4:
+    image = Image.open("OregonDuck.jpg").convert('RGB')
+   elif pickImage == 5:
+    image = Image.open("OregonDuck2.jpg").convert('RGB')   
+  else:
+    image = Image.open("kong.jpg").convert('RGB')
   
-#image = image.rotate(180)
-image = image.resize((40,40))
-imageX = random.randint(0,24)
-imageY = random.randint(0,24)
-dirX = random.randint(1,3)
-dirY = random.randint(1,3)
+
+
 
 ###################################
 # Main loop 
 ###################################
 background()
 while True:
-  matrix.SetImage(image,imageX+dirX,imageY+dirY)
-  sleep(.25)
-  if ((imageX > 24) or (imageX < 0)):
-    dirX = -dirX
-  if ((imageY > 24) or (imageY < 0)):
-    dirY = -dirY
-    
-  imageX = imageX + dirX
-  imageY = imageY + dirY
-  background()
+  matrix.SetImage(image,0,0)
+  sleep(3)
+  newImage()
 
 try:
   print("Press CTRL-C to stop")
