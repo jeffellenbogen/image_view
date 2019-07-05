@@ -91,8 +91,7 @@ background()
 while True:
   matrix.SetImage(image,0,0)
   sleep(3)
-  ScreenWipe(3)
-#  ScreenWipe(random.randint(1,3))
+  ScreenWipe(random.randint(1,3))
   newImage()
 
 try:
