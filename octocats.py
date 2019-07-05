@@ -49,7 +49,7 @@ def newImage():
   global image
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Eva.png").convert('RGB')
   elif pickImage == 2:
     image = Image.open("./octocats/octocat-Jeff64x64.jpg").convert('RGB')
   elif pickImage == 3:
