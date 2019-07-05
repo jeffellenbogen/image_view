@@ -70,7 +70,6 @@ def ScreenWipe(direction):
 
 
 
-
 ###################################
 # Main loop 
 ###################################
@@ -78,7 +77,7 @@ background()
 while True:
   matrix.SetImage(image,0,0)
   sleep(3)
-  ScreenWipe()
+  ScreenWipe(down)
   newImage()
 
 try:
