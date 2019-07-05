@@ -77,8 +77,6 @@ def ScreenWipe(direction):
         matrix.SetImage(temp_image, x, 0)
         sleep(.01)   
 
-
-
 ###################################
 # Main loop 
 ###################################
