@@ -39,7 +39,7 @@ image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
 def background():
   temp_image = Image.new("RGB", (64,64))
   temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,64,64), fill= (255,255,255))
+  temp_draw.rectangle((0,0,63,63), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
 
 ###################################
@@ -66,7 +66,7 @@ def ScreenWipe(direction):
     for x in range (64):
       temp_image = Image.new("RGB", (64, 1))
       temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.rectangle((0,x,64,x), fill=(255,255,255))
+      temp_draw.rectangle((0,0,63,0), fill=(255,255,255))
       matrix.SetImage(temp_image, 0, x)
       sleep(.01)
 
