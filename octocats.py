@@ -61,7 +61,7 @@ def newImage():
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
-  if (direction == "down")
+  if (direction == "down"):
     for x in range (32):
         temp_image = Image.new("RGB", (1, 64))
         temp_draw.line(0,x,31,x, fill=white)
