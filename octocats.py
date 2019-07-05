@@ -28,6 +28,7 @@ options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'a
 #options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
+bg_color = (0,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
@@ -38,7 +39,7 @@ image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
 def background():
   temp_image = Image.new("RGB", (64,64))
   temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,64,64), fill= (255,255,255))
+  temp_draw.rectangle((0,0,63,63), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
 
 ###################################
@@ -57,7 +58,24 @@ def newImage():
   else:
     image = Image.open("./octocats/octocat-Sam64x64.jpg").convert('RGB')
   
-
+###################################
+# ScreenWipe
+###################################
+def ScreenWipe(direction):
+  if (direction == 1):
+    for y in range (64):
+      temp_image = Image.new("RGB", (64, 1))
+      temp_draw = ImageDraw.Draw(temp_image)
+      temp_draw.rectangle((0,0,63,0), fill=(255,255,255))
+      matrix.SetImage(temp_image, 0, y)
+      sleep(.01)
+  else:
+      for x in range (64):
+        temp_image = Image.new("RGB", (1, 64))
+        temp_draw = ImageDraw.Draw(temp_image)
+        temp_draw.rectangle((0,0,0,63), fill=(255,255,255))
+        matrix.SetImage(temp_image, x, 0)
+        sleep(.01)   
 
 ###################################
 # Main loop 
@@ -66,6 +84,7 @@ background()
 while True:
   matrix.SetImage(image,0,0)
   sleep(3)
+  ScreenWipe(random.randint(1,2))
   newImage()
 
 try:
