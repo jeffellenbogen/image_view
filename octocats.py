@@ -51,11 +51,11 @@ def newImage():
   if pickImage == 1:
     image = Image.open("./octocats/octocat-Eva.png").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("./octocats/octocat-Jeff64x64.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Jeff.png").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("./octocats/octocat-Mollyx64.jpg").convert('RGB')  
+    image = Image.open("./octocats/octocat-Molly.png").convert('RGB')  
   else:
-    image = Image.open("./octocats/octocat-Sam64x64.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Sam.png").convert('RGB')
   
 
 
