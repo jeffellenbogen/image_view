@@ -28,6 +28,7 @@ options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'a
 #options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
+bg_color = (255,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
@@ -65,7 +66,7 @@ def ScreenWipe(direction):
     for x in range (32):
       temp_image = Image.new("RGB", (1, 64))
       temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.line(0,x,31,x, fill=white)
+      temp_draw.line(0,x,31,x, fill=bg_color)
       matrix.SetImage(temp_image, 0, x)
       sleep(20)
 
