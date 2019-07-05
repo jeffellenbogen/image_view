@@ -12,7 +12,7 @@ avengers.py demonstrates going through a bunch of different full screen images i
 oregon.py is similar to image_view.py but uses a timer to track elapsed time since the last time a new image is randomly loaded
 
 octocats.py selects a random .jpg image from our octocats family and then demos a vertical or horizontal screenwipe effect
-<img src="./octocats/octocat-Eva.png" width=100>
-<img src="./octocats/octocat-Jeff.png" width=100>
-<img src="./octocats/octocat-Molly.png" width=100>
-<img src="./octocats/octocat-Sam.png" width=100>
+<img src="./octocats/octocat-Eva.png" width=150>
+<img src="./octocats/octocat-Jeff.png" width=150>
+<img src="./octocats/octocat-Molly.png" width=150>
+<img src="./octocats/octocat-Sam.png" width=150>
