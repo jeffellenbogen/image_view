@@ -30,7 +30,7 @@ options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'a
 matrix = RGBMatrix(options = options)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./octocats/octocat-Eva2.jpg").convert('RGB')
+image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
 
 ###################################
 # Background
@@ -49,13 +49,13 @@ def newImage():
   global image
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("./octocats/octocat-Eva2.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("./octocats/octocat-Jeff.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Jeff64x64.jpg").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("./octocats/octocat-Molly.jpg").convert('RGB')  
+    image = Image.open("./octocats/octocat-Molly64x64.jpg").convert('RGB')  
   else:
-    image = Image.open("./octocats/octocat-Sam.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Sam64x64.jpg").convert('RGB')
   
 
 
