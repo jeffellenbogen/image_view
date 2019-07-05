@@ -69,13 +69,20 @@ def ScreenWipe(direction):
       temp_draw.rectangle((0,0,63,0), fill=(255,255,255))
       matrix.SetImage(temp_image, 0, y)
       sleep(.01)
-  else:
+  elif (direction == 2):
       for x in range (64):
         temp_image = Image.new("RGB", (1, 64))
         temp_draw = ImageDraw.Draw(temp_image)
         temp_draw.rectangle((0,0,0,63), fill=(255,255,255))
         matrix.SetImage(temp_image, x, 0)
-        sleep(.01)   
+        sleep(.01)  
+  else:
+      for z in range (64):
+        temp_image = Image.new("RGB", (z, z))
+        temp_draw = ImageDraw.Draw(temp_image)
+        temp_draw.rectangle((0,z,z,0), fill=(255,255,255))
+        matrix.SetImage(temp_image, x, 0)
+        sleep(.01)    
 
 ###################################
 # Main loop 
@@ -84,7 +91,8 @@ background()
 while True:
   matrix.SetImage(image,0,0)
   sleep(3)
-  ScreenWipe(random.randint(1,2))
+  ScreenWipe(3)
+#  ScreenWipe(random.randint(1,3))
   newImage()
 
 try:
