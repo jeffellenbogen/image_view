@@ -66,7 +66,7 @@ def ScreenWipe(direction):
     for x in range (32):
       temp_image = Image.new("RGB", (1, 64))
       temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.line(0,x,31,x, fill=bg_color)
+      temp_draw.line((0,x),(31,x), fill=bg_color)
       matrix.SetImage(temp_image, 0, x)
       sleep(20)
 
