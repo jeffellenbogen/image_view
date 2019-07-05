@@ -57,6 +57,18 @@ def newImage():
   else:
     image = Image.open("./octocats/octocat-Sam64x64.jpg").convert('RGB')
   
+###################################
+# ScreenWipe
+###################################
+def ScreenWipe(direction):
+  if (direction == "down")
+    for x in range (32):
+        temp_image = Image.new("RGB", (1, 64))
+        temp_draw.line(0,x,31,x, fill=white)
+        matrix.SetImage(temp_image, 0, x)
+
+
+
 
 
 ###################################
@@ -66,6 +78,7 @@ background()
 while True:
   matrix.SetImage(image,0,0)
   sleep(3)
+  ScreenWipe()
   newImage()
 
 try:
