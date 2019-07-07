@@ -78,7 +78,7 @@ def ScreenWipe(direction):
         temp_draw.rectangle((0,0,0,63), fill=(255,255,255))
         matrix.SetImage(temp_image, x, 0)
         sleep(.01)  
-  #Diagonal wipe -- This currently doesn't work as desired. See issue #1
+  #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
       for z in range (64):
         temp_image = Image.new("RGB", (z, z))
