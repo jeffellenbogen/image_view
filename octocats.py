@@ -31,7 +31,8 @@ matrix = RGBMatrix(options = options)
 bg_color = (0,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
+image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
+image = image.resize((64,64))
 
 ###################################
 # Background
@@ -42,6 +43,7 @@ def background():
   temp_draw.rectangle((0,0,63,63), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
 
+
 ###################################
 # Image Setup
 ###################################
@@ -50,14 +52,14 @@ def newImage():
   global image
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("./octocats/octocat-Eva64x64.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("./octocats/octocat-Jeff64x64.jpg").convert('RGB')
+    image = Image.open("./octocats/octocat-Jeff256.jpg").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("./octocats/octocat-Molly64x64.jpg").convert('RGB')  
+    image = Image.open("./octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
-    image = Image.open("./octocats/octocat-Sam64x64.jpg").convert('RGB')
-  
+    image = Image.open("./octocats/octocat-Sam256.jpg").convert('RGB')
+  image = image.resize((64,64))
 ###################################
 # ScreenWipe
 ###################################
