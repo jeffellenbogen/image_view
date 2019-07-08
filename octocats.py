@@ -57,7 +57,7 @@ def newImage():
     image = Image.open("./octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
     image = Image.open("./octocats/octocat-Sam256.jpg").convert('RGB')
-  
+  image = image.resize((64,64))
 ###################################
 # ScreenWipe
 ###################################
