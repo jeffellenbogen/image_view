@@ -31,7 +31,7 @@ matrix = RGBMatrix(options = options)
 bg_color = (0,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./octocats/octocat-Eva.png").convert('RGB')
+image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
 
 ###################################
 # Background
@@ -50,13 +50,13 @@ def newImage():
   global image
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("./octocats/octocat-Eva.png").convert('RGB')
+    image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("./octocats/octocat-Jeff.png").convert('RGB')
+    image = Image.open("./octocats/octocat-Jeff256.jpg").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("./octocats/octocat-Molly.png").convert('RGB')  
+    image = Image.open("./octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
-    image = Image.open("./octocats/octocat-Sam.png").convert('RGB')
+    image = Image.open("./octocats/octocat-Sam256.jpg").convert('RGB')
   
 ###################################
 # ScreenWipe
