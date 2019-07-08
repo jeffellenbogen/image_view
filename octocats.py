@@ -41,6 +41,7 @@ def background():
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,63,63), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
+  image = image.resize((64,64))
 
 ###################################
 # Image Setup
