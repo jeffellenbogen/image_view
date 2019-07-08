@@ -32,6 +32,7 @@ bg_color = (0,255,255)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
+image = image.resize((64,64))
 
 ###################################
 # Background
@@ -41,7 +42,7 @@ def background():
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,63,63), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
-  image = image.resize((64,64))
+
 
 ###################################
 # Image Setup
