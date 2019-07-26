@@ -2,6 +2,7 @@
 # Used in main loop
 from time import sleep
 import random
+import time
 
 ###################################
 # Graphics imports, constants and structures
