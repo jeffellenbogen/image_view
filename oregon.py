@@ -43,8 +43,8 @@ xMaxRange = total_columns - imageSize
 yMaxRange = total_rows - imageSize
 imageX= random.randint(0,xMaxRange)
 imageY= random.randint(0,yMaxRange)
-dirX = random.randint(3)
-dirY = random.randint(3)
+dirX = random.randint(1,3)
+dirY = random.randint(1,3)
 
 start = time.time()
 elapsed_time = 0
