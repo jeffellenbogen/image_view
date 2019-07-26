@@ -49,15 +49,32 @@ dirY = random.randint(1,3)
 start = time.time()
 elapsed_time = 0
 last_reset = 0
+backgroundColor = (255,255,255)
 
 ###################################
 # Background
 ###################################
 def background():
+  global backgroundColor
   temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,total_columns,total_rows), fill= (255,255,255))
+  temp_draw.rectangle((0,0,total_columns,total_rows), fill= backgroundColor)
   matrix.SetImage(temp_image,0,0)
+
+
+###################################
+# hideImage
+###################################
+def hideImage():
+  global image
+  global imageX
+  global imageY
+  global backgroundColor
+  temp_draw = ImageDraw.Draw(temp_image)
+  temp_draw.rectangle((0,0,imageSize,imageSize), fill= backgroundColor)
+  matrix.SetImage(temp_image,imageX, imageY)
+
+
 
 ###################################
 # newImage
