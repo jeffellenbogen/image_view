@@ -117,7 +117,7 @@ while True:
     
   imageX = imageX + dirX
   imageY = imageY + dirY
-  background()
+  hideImage()
 
 try:
   print("Press CTRL-C to stop")
