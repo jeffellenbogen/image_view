@@ -56,7 +56,7 @@ backgroundColor = (255,255,255)
 ###################################
 def background():
   global backgroundColor
-  temp_image = Image.new("RGB", (total_column - 1,total_rows - 1))
+  temp_image = Image.new("RGB", (total_columns - 1,total_rows - 1))
   temp_draw = ImageDraw.Draw(temp_image)
   temp_draw.rectangle((0,0,total_columns,total_rows), fill= backgroundColor)
   matrix.SetImage(temp_image,0,0)
