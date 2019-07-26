@@ -35,24 +35,28 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
+imageSize = 64
 image = Image.open("./oregon/OregonO_green.jpg").convert('RGB')
 #image = image.rotate(180)
-image = image.resize((40,40))
-imageX= random.randint(0,24)
-imageY= random.randint(0,24)
+image = image.resize((imageSize,imageSize))
+xMaxRange = total_columns - imageSize
+yMaxRange = total_rows - imageSize
+imageX= random.randint(0,xMaxRange)
+imageY= random.randint(0,yMaxRange)
 dirX = random.randint(1,3)
 dirY = random.randint(1,3)
 
 start = time.time()
 elapsed_time = 0
 last_reset = 0
+
 ###################################
 # Background
 ###################################
 def background():
-  temp_image = Image.new("RGB", (64,64))
+  temp_image = Image.new("RGB", (total_columns,total_rows))
   temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,64,64), fill= (255,255,255))
+  temp_draw.rectangle((0,0,total_columns,total_rows), fill= (255,255,255))
   matrix.SetImage(temp_image,0,0)
 
 ###################################
@@ -72,7 +76,7 @@ def newImage():
     image = Image.open("./oregon/OregonO_green.jpg").convert('RGB')
   else:
     image = Image.open("./oregon/OregonO_yellow.jpg").convert('RGB')    
-  image = image.resize((40,40))
+  image = image.resize((imageSize,imageSize))
 
 
 ###################################
@@ -89,9 +93,9 @@ while True:
   elapsed_time = time.time()-last_reset    
   matrix.SetImage(image, imageX+dirX, imageY+dirY)
   sleep(.25)
-  if ((imageX > 24) or (imageX < 0)):
+  if ((imageX > xMaxRange) or (imageX < 0)):
     dirX = -dirX
-  if ((imageY > 24) or (imageY < 0)):
+  if ((imageY > yMaxRange) or (imageY < 0)):
     dirY = -dirY
     
   imageX = imageX + dirX
