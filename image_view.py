@@ -76,32 +76,28 @@ def hideImage():
   matrix.SetImage(temp_image,imageX, imageY)
 
 
-###################################
-# Image Setup
-###################################
-pickImage = random.randint(1,6)
-if pickImage == 1:
-  image = Image.open("./logos/flyingpig.jpg").convert('RGB')
-elif pickImage == 2:
-  image = Image.open("./logos/elephant.jpg").convert('RGB')
-elif pickImage == 3:
-  image = Image.open("./logos/phish.jpg").convert('RGB')
-elif pickImage == 4:
-  image = Image.open("./logos/unicorn2.jpg").convert('RGB')
-elif pickImage == 5:
-  image = Image.open("./logos/kong.jpg").convert('RGB')  
-else:
-  image = Image.open("./logos/mustanglogo2.jpg").convert('RGB')
-  
-#image = image.rotate(180)
-image = image.resize((imageSize,imageSize))
-
-imageX = random.randint(0,24)
-imageY = random.randint(0,24)
-dirX = random.randint(1,3)
-dirY = random.randint(1,3)
 
 ###################################
+# newImage
+###################################
+def newImage():
+  global image
+  pickImage = random.randint(1,6)
+  if pickImage == 1:
+    image = Image.open("./logos/flyingpig.jpg").convert('RGB')
+  elif pickImage == 2:
+    image = Image.open("./logos/elephant.jpg").convert('RGB')
+  elif pickImage == 3:
+    image = Image.open("./logos/phish.jpg").convert('RGB')
+  elif pickImage == 4:
+    image = Image.open("./logos/unicorn2.jpg").convert('RGB')
+  elif pickImage == 5:
+    image = Image.open("./logos/kong.jpg").convert('RGB')  
+  else:
+    image = Image.open("./logos/mustanglogo2.jpg").convert('RGB') 
+  image = image.resize((imageSize,imageSize))
+
+
 ###################################
 # Main loop 
 ###################################
