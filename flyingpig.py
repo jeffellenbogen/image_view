@@ -35,7 +35,7 @@ options.gpio_slowdown = 2
 matrix = RGBMatrix(options = options)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-imageSize = 100
+imageSize = 130
 image = Image.open("./pigs/flying-pig-03.jpg").convert('RGB')
 image = image.resize((imageSize,imageSize))
 backgroundColor = (255,255,255)
@@ -93,7 +93,7 @@ while True:
     else:
       image = Image.open("./pigs/flying-pig-23.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
-    matrix.SetImage(image,(total_columns - imageSize) / 2,(total_rows - imageSize) / 2)
+    matrix.SetImage(image,(total_columns - imageSize) / 2,(total_rows - imageSize) / 2 + 20)
     sleep(.1)
   
 try:
