@@ -41,7 +41,7 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 10
+imageSize = 13
 slot=1
 imageSlots = 6
 
@@ -128,11 +128,11 @@ background()
 sleep(1)
 
 while True:
-  while (slot <= 6):
+  while (slot <= imageSlots):
     newImage(slot)
     slot+=1
     sleep(.25)
-  if slot > 6:
+  if slot > imageSlots:
     slot = 1
   sleep(2)  
   ScreenWipe(random.randint(1,3))
