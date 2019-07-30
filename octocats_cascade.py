@@ -43,7 +43,7 @@ temp_draw = ImageDraw.Draw(temp_image)
 
 imageSize = 38
 slot=1
-imageSlots = 2
+imageSlots = 3
 
 ###################################
 # Background
