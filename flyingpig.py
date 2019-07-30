@@ -38,7 +38,7 @@ matrix = RGBMatrix(options = options)
 imageSize = 84
 image = Image.open("./pigsBW/flying-pig-03.jpg").convert('RGB')
 image = image.resize((imageSize,imageSize))
-backgroundColor = (255,255,255)
+backgroundColor = (0,0,0)
 
 ###################################
 # Background
