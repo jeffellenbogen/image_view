@@ -35,7 +35,7 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
-imageSize = 50
+imageSize = 80
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./avengers/ironman.jpg").convert('RGB')
 image = image.resize((imageSize,imageSize))
@@ -79,7 +79,7 @@ def newImage():
 ###################################
 background()
 while True:
-  matrix.SetImage(image,0,0)
+  matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
   sleep(3)
   newImage()
 
