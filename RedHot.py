@@ -39,7 +39,7 @@ imageSize = 80
 angle = 0
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./logos/RHCP.png").convert('RGB')
+image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
 image = image.resize((imageSize,imageSize))
 backgroundColor = (0,0,0)
 
@@ -61,7 +61,7 @@ def rotateImage():
   # used global keyword here to access the object image in the main loop
   global image
   global angle
-  image = Image.open("./logos/RHCP.png").convert('RGB')
+  image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
   image = image.resize((imageSize,imageSize))
   image = image.rotate(angle)
   angle += 5
