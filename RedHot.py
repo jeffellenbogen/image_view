@@ -64,7 +64,7 @@ def rotateImage():
   image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
   image = image.resize((imageSize,imageSize))
   image = image.rotate(angle)
-  angle += 5
+  angle += 1
   if angle > 360:
     angle = 0
   
@@ -76,7 +76,7 @@ def rotateImage():
 background()
 while True:
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
-  sleep(.1)
+  sleep(.01)
   rotateImage()
 
 try:
