@@ -38,7 +38,7 @@ matrix = RGBMatrix(options = options)
 imageSize = 50
 image = Image.open("./pigs/flying-pig-03.jpg").convert('RGB')
 image = image.resize((imageSize,imageSize))
-backgroundColor = (255,255,255)
+backgroundColor = (100,100,100)
 
 ###################################
 # Background
@@ -93,7 +93,7 @@ while True:
     else:
       image = Image.open("./pigs/flying-pig-23.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
-    matrix.SetImage(image,0,0)
+    matrix.SetImage(image,(total_columns - imageSize) / 2,(total_rows - imageSize) / 2)
     sleep(.1)
   
 try:
