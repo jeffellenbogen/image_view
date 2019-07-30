@@ -128,11 +128,11 @@ background()
 sleep(1)
 
 while True:
-  while (slot <= 4):
+  while (slot <= 6):
     newImage(slot)
     slot+=1
     sleep(.25)
-  if slot > 4:
+  if slot > 6:
     slot = 1
   sleep(2)  
   ScreenWipe(random.randint(1,3))
