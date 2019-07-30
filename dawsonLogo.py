@@ -36,7 +36,7 @@ options.gpio_slowdown = 2
 matrix = RGBMatrix(options = options)
 
 imageSize = 100
-image = Image.open("./oregon/OregonO_green.jpg").convert('RGB')
+image = Image.open("./logos/mustanglogo2.jpg").convert('RGB') 
 #image = image.rotate(180)
 image = image.resize((imageSize,imageSize))
 xMaxRange = total_columns - imageSize
