@@ -41,7 +41,7 @@ angle = 0
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./logos/RedHotChiliPeppers2.png").convert('RGB')
 image = image.resize((imageSize,imageSize))
-backgroundColor = (0,0,0)
+backgroundColor = (255,255,255)
 
 ###################################
 # Background
