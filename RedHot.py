@@ -69,7 +69,7 @@ def rotateImage(passedDegrees):
 background()
 while True:
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
-  sleep(.01)
+  sleep(.1)
   rotateImage(2)
 
 try:
