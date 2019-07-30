@@ -35,7 +35,7 @@ options.gpio_slowdown = 2
 matrix = RGBMatrix(options = options)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-imageSize = 84
+imageSize = 120
 image = Image.open("./pigsBW/flying-pig-03.jpg").convert('RGB')
 image = image.resize((imageSize,imageSize))
 backgroundColor = (0,0,0)
