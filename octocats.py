@@ -66,13 +66,13 @@ def newImage():
 
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    local_image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
+    local_image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
   elif pickImage == 2:
-    local_image = Image.open("./rects_octocats/octocat-Jeff256.jpg").convert('RGB')
+    local_image = Image.open("./octocats/octocat-Jeff256.jpg").convert('RGB')
   elif pickImage == 3:
-    local_image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
+    local_image = Image.open("./octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
-    local_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
+    local_image = Image.open("./octocats/octocat-Sam256.jpg").convert('RGB')
   local_image = local_image.resize((imageSize,imageSize))
   
   imageOffsetX = (total_columns - imageSize) // 2
