@@ -77,7 +77,7 @@ background()
 while True:
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
   sleep(.1)
-  rotateImage()
+  #rotateImage()
 
 try:
   print("Press CTRL-C to stop")
