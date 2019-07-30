@@ -36,7 +36,7 @@ matrix = RGBMatrix(options = options)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 imageSize = 84
-image = Image.open("./pigs/flying-pig-03.jpg").convert('RGB')
+image = Image.open("./pigsBW/flying-pig-03.jpg").convert('RGB')
 image = image.resize((imageSize,imageSize))
 backgroundColor = (255,255,255)
 
@@ -58,40 +58,40 @@ background()
 while True:
   for x in range(11):
     if x == 0:
-      image = Image.open("./pigs/flying-pig-01.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-01.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 1:
-      image = Image.open("./pigs/flying-pig-03.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-03.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 2:
-      image = Image.open("./pigs/flying-pig-05.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-05.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 3:
-      image = Image.open("./pigs/flying-pig-07.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-07.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 4:
-      image = Image.open("./pigs/flying-pig-09.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-09.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 5:
-      image = Image.open("./pigs/flying-pig-11.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-11.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 6:
-      image = Image.open("./pigs/flying-pig-13.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-13.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 7:
-      image = Image.open("./pigs/flying-pig-15.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-15.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 8:
-      image = Image.open("./pigs/flying-pig-17.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-17.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 9:
-      image = Image.open("./pigs/flying-pig-19.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-19.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     elif x == 10:
-      image = Image.open("./pigs/flying-pig-21.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-21.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     else:
-      image = Image.open("./pigs/flying-pig-23.jpg").convert('RGB')
+      image = Image.open("./pigsBW/flying-pig-23.jpg").convert('RGB')
       image = image.resize((imageSize,imageSize))
     matrix.SetImage(image,(total_columns - imageSize) / 2,(total_rows - imageSize) / 2 + 10)
     sleep(.1)
