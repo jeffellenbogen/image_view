@@ -1,3 +1,4 @@
+
 # Used in main loop
 from time import sleep
 import random
@@ -9,12 +10,12 @@ from rgbmatrix import RGBMatrix, RGBMatrixOptions
 from PIL import Image, ImageDraw
 
 # this is the size of ONE of our matrixes. 
-matrix_rows = 64
-matrix_columns = 64 
+matrix_rows = 32 
+matrix_columns = 32 
 
 # how many matrixes stacked horizontally and vertically 
-matrix_horizontal = 1 
-matrix_vertical = 1
+matrix_horizontal = 4 
+matrix_vertical = 3
 
 total_rows = matrix_rows * matrix_vertical
 total_columns = matrix_columns * matrix_horizontal
@@ -24,80 +25,105 @@ options.rows = matrix_rows
 options.cols = matrix_columns 
 options.chain_length = matrix_horizontal
 options.parallel = matrix_vertical 
-options.hardware_mapping = 'adafruit-hat-pwm'  # If you have an Adafruit HAT: 'adafruit-hat'
-#options.gpio_slowdown = 2
+
+#options.hardware_mapping = 'adafruit-hat-pwm' 
+#options.hardware_mapping = 'adafruit-hat'  # If you have an Adafruit HAT: 'adafruit-hat'
+options.hardware_mapping = 'regular'  
+
+options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
-bg_color = (0,255,255)
+#bg_color = (25,25,25)
+randomColor = random.randint(0,360)
+bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
-image = image.resize((64,64))
+temp_image = Image.new("RGB", (total_columns,total_rows))
+temp_draw = ImageDraw.Draw(temp_image)
+
+imageSize = 28
 
 ###################################
 # Background
 ###################################
 def background():
-  temp_image = Image.new("RGB", (64,64))
+  global temp_image
+  randomColor = random.randint(0,360)
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
   temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,63,63), fill= (255,255,255))
+  temp_draw.rectangle((0,0,total_columns,total_rows), fill= bg_color)
   matrix.SetImage(temp_image,0,0)
-
 
 ###################################
 # Image Setup
 ###################################
 def newImage():
   # used global keyword here to access the object image in the main loop
-  global image
+  global temp_image
+  global imageSize
+  global total_rows
+  global total_columns
+
   pickImage = random.randint(1,4)
   if pickImage == 1:
-    image = Image.open("./octocats/octocat-Eva256.jpg").convert('RGB')
+    local_image = Image.open("./rects_octocats/octocat-Eva256.jpg").convert('RGB')
   elif pickImage == 2:
-    image = Image.open("./octocats/octocat-Jeff256.jpg").convert('RGB')
+    local_image = Image.open("./rects_octocats/octocat-Jeff256.jpg").convert('RGB')
   elif pickImage == 3:
-    image = Image.open("./octocats/octocat-Molly256.jpg").convert('RGB')  
+    local_image = Image.open("./rects_octocats/octocat-Molly256.jpg").convert('RGB')  
   else:
-    image = Image.open("./octocats/octocat-Sam256.jpg").convert('RGB')
-  image = image.resize((64,64))
+    local_image = Image.open("./rects_octocats/octocat-Sam256.jpg").convert('RGB')
+  local_image = local_image.resize((imageSize,imageSize))
+  
+  imageOffsetX = (total_columns - imageSize) // 2
+  imageOffsetY = (total_rows - imageSize) // 2
+  temp_image.paste(local_image, (imageOffsetX,imageOffsetY))
+  matrix.SetImage(temp_image,0,0)
+
 ###################################
 # ScreenWipe
 ###################################
 def ScreenWipe(direction):
+  global temp_image
+  global temp_draw
+  global total_rows
+  global total_columns
+  wipeSpeed = .03
+
+  randomColor = random.randint(0,360)
+  bg_color ="hsl({}, 100%, 50%)".format(randomColor)
+
   #Vertical wipe
   if (direction == 1): 
-    for y in range (64):
-      temp_image = Image.new("RGB", (64, 1))
-      temp_draw = ImageDraw.Draw(temp_image)
-      temp_draw.rectangle((0,0,63,0), fill=(255,255,255))
-      matrix.SetImage(temp_image, 0, y)
-      sleep(.01)
+    for y in range (total_rows):
+      temp_draw.line((0,y,total_columns,y), fill=bg_color)
+      matrix.SetImage(temp_image,0,0)
+      sleep(wipeSpeed)
+
   #Horizontal wipe    
   elif (direction == 2):
-      for x in range (64):
-        temp_image = Image.new("RGB", (1, 64))
-        temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((0,0,0,63), fill=(255,255,255))
-        matrix.SetImage(temp_image, x, 0)
-        sleep(.01)  
+      for x in range (total_columns):
+        temp_draw.line((x,0,x,total_rows), fill=bg_color)
+        matrix.SetImage(temp_image,0,0)
+        sleep(wipeSpeed)  
+
   #Diagonal wipe -- This currently doesn't work as desired. See issue #6
   else:
-      for z in range (64):
-        temp_image = Image.new("RGB", (z, z))
-        temp_draw = ImageDraw.Draw(temp_image)
-        temp_draw.rectangle((0,0,z,z), fill=(255,255,255))
-        matrix.SetImage(temp_image, 0, 0)
-        sleep(.01)    
+      for z in range (total_rows+total_columns):
+        temp_draw.line((0,z,total_columns,z - total_columns), fill=bg_color)
+        matrix.SetImage(temp_image,0,0)
+        sleep(wipeSpeed/2)    
 
 ###################################
 # Main loop 
 ###################################
 background()
+sleep(2)
 while True:
-  matrix.SetImage(image,0,0)
-  sleep(3)
-  ScreenWipe(random.randint(1,3))
   newImage()
+  sleep(2)
+  ScreenWipe(random.randint(1,3))
+  sleep(1)
 
 try:
   print("Press CTRL-C to stop")
