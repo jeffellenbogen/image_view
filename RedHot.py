@@ -36,11 +36,11 @@ options.gpio_slowdown = 2
 matrix = RGBMatrix(options = options)
 
 imageSize = 80
-#image = image.rotate(180)
+
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
 image = image.resize((imageSize,imageSize))
-backgroundColor = (255,255,255)
+backgroundColor = (0,0,0)
 
 ###################################
 # Background
@@ -54,15 +54,12 @@ def background():
 
 
 ###################################
-# Image Setup
+# Rotate Image
 ###################################
-def newImage():
+def rotateImage(passedDegrees):
   # used global keyword here to access the object image in the main loop
   global image
-  global imageSize
-
-  image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
-  image = image.resize((imageSize,imageSize))
+  image = image.rotate(passedDegrees)
   
 
 
@@ -73,7 +70,7 @@ background()
 while True:
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
   sleep(3)
-  newImage()
+  rotateImage(2)
 
 try:
   print("Press CTRL-C to stop")
