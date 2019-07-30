@@ -41,7 +41,7 @@ bg_color ="hsl({}, 100%, 20%)".format(randomColor)
 temp_image = Image.new("RGB", (total_columns,total_rows))
 temp_draw = ImageDraw.Draw(temp_image)
 
-imageSize = 28
+imageSize = 64
 
 ###################################
 # Background
@@ -88,7 +88,7 @@ def ScreenWipe(direction):
   global temp_draw
   global total_rows
   global total_columns
-  wipeSpeed = .03
+  wipeSpeed = .01
 
   randomColor = random.randint(0,360)
   bg_color ="hsl({}, 100%, 50%)".format(randomColor)
