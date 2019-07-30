@@ -72,7 +72,7 @@ def hideImage():
   global backgroundColor
   temp_image = Image.new("RGB", (imageSize + 2,imageSize + 2))
   temp_draw = ImageDraw.Draw(temp_image)
-  temp_draw.rectangle((0,0,imageSize + 1,imageSize + 1), fill= backgroundColor)
+  temp_draw.rectangle((-1,-1,imageSize + 2 ,imageSize + 2), fill= backgroundColor)
   matrix.SetImage(temp_image,imageX, imageY)
 
 
