@@ -63,8 +63,8 @@ def rotateImage():
   global angle
   image = Image.open("./logos/RHCP.png").convert('RGB')
   image = image.resize((imageSize,imageSize))
-  #image = image.rotate(angle)
-  #angle += 5
+  image = image.rotate(angle)
+  angle += 5
   if angle > 360:
     angle = 0
   
