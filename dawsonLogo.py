@@ -35,7 +35,7 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
-imageSize = 64
+imageSize = 40
 image = Image.open("./logos/mustanglogo2.jpg").convert('RGB')
 #image = image.rotate(180)
 image = image.resize((imageSize,imageSize))
