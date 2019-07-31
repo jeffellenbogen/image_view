@@ -96,7 +96,7 @@ def newImage():
   elif pickImage == 5:
     image = Image.open("./logos/kong.jpg").convert('RGB')  
   else:
-    image = Image.open("./logos/mustanglogo2.jpg").convert('RGB') 
+    image = Image.open("./logos/mustanglogo3.jpg").convert('RGB') 
   image = image.resize((imageSize,imageSize))
 
 
@@ -121,7 +121,7 @@ while True:
     
   imageX = imageX + dirX
   imageY = imageY + dirY
-  hideImage()
+  #hideImage()
 
 try:
   print("Press CTRL-C to stop")
