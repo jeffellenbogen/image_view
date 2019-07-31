@@ -35,8 +35,8 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
-imageSize = 40
-image = Image.open("./logos/mustanglogo2.jpg").convert('RGB')
+imageSize = 64
+image = Image.open("./logos/mustanglogo3.jpg").convert('RGB')
 #image = image.rotate(180)
 image = image.resize((imageSize,imageSize))
 xMaxRange = total_columns - imageSize
@@ -84,7 +84,7 @@ def hideImage():
 def newImage():
   global image
 
-  image = Image.open("./logos/mustanglogo2.jpg").convert('RGB') 
+  image = Image.open("./logos/mustanglogo3.jpg").convert('RGB') 
   image = image.resize((imageSize,imageSize))
 
 
