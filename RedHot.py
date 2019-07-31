@@ -63,7 +63,7 @@ def rotateImage():
   global angle
   #image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
   #image = image.resize((imageSize,imageSize))
-  image = image.rotate(angle)
+  image = image.rotate(2)
   angle += 2
   if angle > 360:
     angle = 0
