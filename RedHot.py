@@ -61,9 +61,9 @@ def rotateImage():
   # used global keyword here to access the object image in the main loop
   global image
   global angle
-  #image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
-  #image = image.resize((imageSize,imageSize))
-  image = image.rotate(2)
+  image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
+  image = image.resize((imageSize,imageSize))
+  image = image.rotate(angle)
   angle += 2
   if angle > 360:
     angle = 0
