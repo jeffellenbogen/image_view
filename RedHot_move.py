@@ -54,20 +54,6 @@ def background():
   matrix.SetImage(temp_image,0,0)
 
 
-###################################
-# Rotate Image
-###################################
-def rotateImage():
-  # used global keyword here to access the object image in the main loop
-  global image
-  global angle
-  image = Image.open("./logos/RedHotChiliPeppers.png").convert('RGB')
-  image = image.resize((imageSize,imageSize))
-  image = image.rotate(angle)
-  angle += 2
-  if angle > 360:
-    angle = 0
-  
 
 
 ###################################
@@ -77,8 +63,7 @@ background()
 while True:
   matrix.SetImage(image,(total_columns - imageSize)/2,(total_rows - imageSize)/2)
   sleep(.05)
-  #foo = input("Hit any key")
-  rotateImage()
+
 
 try:
   print("Press CTRL-C to stop")
