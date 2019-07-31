@@ -109,7 +109,7 @@ while True:
     
   imageX = imageX + dirX
   imageY = imageY + dirY
-  hideImage()
+  #hideImage()
 
 try:
   print("Press CTRL-C to stop")
