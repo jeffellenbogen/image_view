@@ -94,12 +94,12 @@ def newImage():
 background()
 #newImage()
 while True:
-  if (elapsed_time > 5):
+  '''if (elapsed_time > 5):
     newImage()
     elapsed_time=0
     last_reset=time.time()
     
-  elapsed_time = time.time()-last_reset    
+  elapsed_time = time.time()-last_reset  '''  
   matrix.SetImage(image, imageX+dirX, imageY+dirY)
   sleep(.10)
   if ((imageX > xMaxRange) or (imageX < 0)):
