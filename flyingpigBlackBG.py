@@ -82,7 +82,7 @@ while True:
     else:
       image = Image.open("./pigsBW/flying-pig-23.jpg").convert('RGB')
     image = image.resize((imageSize,imageSize))
-    matrix.SetImage(image,(total_columns - imageSize) / 2,(total_rows - imageSize) / 2 + 10)
+    matrix.SetImage(image,(total_columns - imageSize) / 2,(total_rows - imageSize) / 2 + 5)
     sleep(.1)
   
 try:
