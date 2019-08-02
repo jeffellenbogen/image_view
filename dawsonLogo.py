@@ -102,9 +102,9 @@ while True:
   elapsed_time = time.time()-last_reset  '''  
   matrix.SetImage(image, imageX+dirX, imageY+dirY)
   sleep(.10)
-  if ((imageX > xMaxRange) or (imageX < 0)):
+  if ((imageX > xMaxRange - 1) or (imageX < 1)):
     dirX = -dirX
-  if ((imageY > yMaxRange) or (imageY < 0)):
+  if ((imageY > yMaxRange - 1) or (imageY < 1)):
     dirY = -dirY
     
   imageX = imageX + dirX
