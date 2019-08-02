@@ -35,7 +35,7 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
-imageSize = 80
+imageSize = 90
 angle = 0
 
 #create an instance of the image object to allow for it to be used globally in functions and main loop
