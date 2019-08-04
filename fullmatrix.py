@@ -35,10 +35,10 @@ options.gpio_slowdown = 2
 
 matrix = RGBMatrix(options = options)
 
-imageSize = 90
+#imageSize = 90
 #create an instance of the image object to allow for it to be used globally in functions and main loop
 image = Image.open("./fullmatrix_5x3/dawsonLogo.jpg").convert('RGB')
-image = image.resize((imageSize,imageSize))
+#image = image.resize((imageSize,imageSize))
 backgroundColor = (255,255,255)
 
 
