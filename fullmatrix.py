@@ -66,7 +66,7 @@ def background():
 background()
 while True:
   for i in range (imageArraySize):
-    image = Image.open("./fullmatrix_5x3/{}").convert('RGB').format(imageArray[i])
+    image = Image.open("./fullmatrix_5x3/{}".format(imageArray[i])).convert('RGB')
     sleep(3)
     matrix.SetImage(image,0,0)
   
