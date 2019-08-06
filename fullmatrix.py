@@ -33,6 +33,8 @@ options.hardware_mapping = 'regular'
 
 options.gpio_slowdown = 2
 
+timePerImage = 5
+
 matrix = RGBMatrix(options = options)
 
 #imageSize = 90
@@ -69,7 +71,7 @@ def background():
 while True:
   for i in range (imageArraySize):
     image = Image.open("./fullmatrix_5x3/{}".format(imageArray[i])).convert('RGB')
-    sleep(3)
+    sleep(timePerImage)
     matrix.SetImage(image,0,0)
   
 
