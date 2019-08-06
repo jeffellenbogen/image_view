@@ -47,7 +47,7 @@ backgroundColor = (255,255,255)
 ###################################
 
 imageArray = ["boulderFlatirons1.jpg", "dawsonLogo.jpg", "fireOnTheMountain.jpg", "homeSweetHome.jpg" ,"homeSweetHome2.jpg"]
-imageArraySize = len(imageArray) - 1
+imageArraySize = len(imageArray) 
 ###################################
 # Background
 ###################################
