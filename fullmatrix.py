@@ -37,7 +37,7 @@ matrix = RGBMatrix(options = options)
 
 #imageSize = 90
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./fullmatrix_5x3/dawsonLogo.jpg").convert('RGB')
+image = Image.open("./fullmatrix_5x3/welcomeToColorfulColorado.jpg").convert('RGB')
 #image = image.resize((imageSize,imageSize))
 backgroundColor = (255,255,255)
 
@@ -46,8 +46,9 @@ backgroundColor = (255,255,255)
 # create array of image names in folder
 ###################################
 
-imageArray = ["boulderFlatirons1.jpg", "dawsonLogo.jpg", "fireOnTheMountain.jpg", "homeSweetHome.jpg" ,"homeSweetHome2.jpg"]
+imageArray = ["boulderFlatirons1.jpg", "dawsonLogo.jpg", "fireOnTheMountain.jpg", "homeSweetHome.jpg" ,"homeSweetHome2.jpg", "homeSweetHome3.jpg", "welcomeColorado.jpg", "welcomeToColorfulColorado"]
 imageArraySize = len(imageArray) 
+print (imageArraySize)
 ###################################
 # Background
 ###################################
