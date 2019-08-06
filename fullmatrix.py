@@ -47,7 +47,7 @@ backgroundColor = (255,255,255)
 # create array of image names in folder
 ###################################
 
-imageArray = ["boulderFlatirons1.jpg", "fireOnTheMountain.jpg", "homeSweetHome.jpg", "homeSweetHome3.jpg", "welcomeColorado.jpg", "welcomeToColorfulColorado.jpg"]
+imageArray = ["boulderFlatirons1.jpg", "mountainLake.jpg", "fireOnTheMountain.jpg", "homeSweetHome4.jpg", "coloradoNeedlepoint.jpg","welcomeColorado.jpg", "flatirons2.jpg","welcomeToColorfulColorado.jpg","denverSkyline.jpg"]
 imageArraySize = len(imageArray) 
 print (imageArraySize)
 ###################################
