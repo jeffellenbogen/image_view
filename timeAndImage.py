@@ -39,7 +39,7 @@ matrix = RGBMatrix(options = options)
 
 #imageSize = 90
 #create an instance of the image object to allow for it to be used globally in functions and main loop
-image = Image.open("./fullmatrix_5x3/mountainLake..jpg").convert('RGB')
+image = Image.open("./fullmatrix_5x3/mountainLake.jpg").convert('RGB')
 matrix.SetImage(image,0,0)
 #image = image.resize((imageSize,imageSize))
 backgroundColor = (255,255,255)
