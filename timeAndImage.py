@@ -5,13 +5,12 @@ import random
 import time
 import datetime
 
-myDateTime = datetime.datetime.utcnow()
+myDateTime = datetime.datetime.now()
 
 
 print (myDateTime.strftime("Today's Date: %m/%d/%Y"))
 print (myDateTime.strftime("Current Time in Colorado: %H:%M:%S"))
-
-
+print (myDateTime.altzone/3600,"Hours")
 
 ###################################
 # Graphics imports, constants and structures
