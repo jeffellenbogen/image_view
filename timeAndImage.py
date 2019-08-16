@@ -5,7 +5,7 @@ import random
 import time
 import datetime
 
-currentTime = datetime.datetime.now():
+currentTime = datetime.datetime.now()
 print (currentTime) 
 
 ###################################
