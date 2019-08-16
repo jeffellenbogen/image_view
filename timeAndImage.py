@@ -4,7 +4,7 @@ from time import sleep
 import random
 import time
 import datetime
-import date
+from datetime import date
 
 
 myDateTime = datetime.datetime.now()
