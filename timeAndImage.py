@@ -5,8 +5,9 @@ import random
 import time
 import datetime
 
-currentTime = datetime.datetime.now()
-print (currentTime) 
+MyDateTime = datetime.datetime.now()
+print (MyDateTime.strftime("Long Date  : %d/%m/%Y"))
+
 
 ###################################
 # Graphics imports, constants and structures
