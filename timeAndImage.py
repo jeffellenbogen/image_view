@@ -8,11 +8,11 @@ import date
 
 
 myDateTime = datetime.datetime.now()
-
+today = date.today()
 
 print (myDateTime.strftime("Today's Date: %m/%d/%Y"))
 print (myDateTime.strftime("Current Time in Colorado: %H:%M:%S"))
-print ("Another method for today's date: "date.today())
+print ("Another method for today's date: "today)
 
 ###################################
 # Graphics imports, constants and structures
