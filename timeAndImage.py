@@ -5,8 +5,8 @@ import random
 import time
 import datetime
 
-myDate = datetime.date.today()
-myTime = datetime.time.now()
+myDate = date.today()
+myTime = time.now()
 
 print (myDate.strftime("Today's Date: %m/%d/%Y"))
 print (myTime.strftime("Current Time in Colorado: %H:%M:%S"))
