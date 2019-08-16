@@ -5,7 +5,7 @@ import random
 import time
 import datetime
 
-myDatetime = datetime.date.now()
+myDatetime = datetime.now()
 
 
 print (myDatetime.strftime("Today's Date: %m/%d/%Y"))
