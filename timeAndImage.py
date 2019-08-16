@@ -6,7 +6,7 @@ import time
 import datetime
 
 MyDateTime = datetime.datetime.now()
-print (MyDateTime.strftime("Long Date  : %d/%m/%Y"))
+print (MyDateTime.strftime("Today's Date  : %m/%d/%Y"))
 
 
 ###################################
