@@ -10,7 +10,7 @@ myDateTime = datetime.datetime.now()
 
 print (myDateTime.strftime("Today's Date: %m/%d/%Y"))
 print (myDateTime.strftime("Current Time in Colorado: %H:%M:%S"))
-print (myDateTime.altzone/3600,"Hours")
+print ("Another method for today's date: "date.today())
 
 ###################################
 # Graphics imports, constants and structures
