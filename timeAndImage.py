@@ -3,6 +3,10 @@
 from time import sleep
 import random
 import time
+import datetime
+
+currentTime = datetime.datetime.now():
+print (currentTime) 
 
 ###################################
 # Graphics imports, constants and structures
