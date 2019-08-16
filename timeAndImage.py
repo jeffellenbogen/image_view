@@ -6,7 +6,7 @@ import time
 import datetime
 
 myDate = date.today()
-myTime = time.now()
+myTime = datatime.time.now()
 
 print (myDate.strftime("Today's Date: %m/%d/%Y"))
 print (myTime.strftime("Current Time in Colorado: %H:%M:%S"))
