@@ -5,12 +5,11 @@ import random
 import time
 import datetime
 
-today = date.today()
-timeNow = datetime.now()
+myDateTime = datetime.datetime.now()
 
 
-print (today.strftime("Today's Date: %m/%d/%Y"))
-print (timeNow.strftime("Current Time in Colorado: %H:%M:%S"))
+print (myDateTime.strftime("Today's Date: %m/%d/%Y"))
+print (myDateTime.strftime("Current Time in Colorado: %H:%M:%S"))
 
 
 
